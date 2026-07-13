@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<script>
+    function login(){
+        const email = document.getElementById("email").value;
+        const pass = document.getElementById("password").value;
+
+        if(email !== "" && pass !== ""){
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Enter details");
+        }
+    }
+</script>
+
+</body>
+</html>
