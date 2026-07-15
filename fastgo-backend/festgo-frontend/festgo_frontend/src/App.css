@@ -1,0 +1,622 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+body{
+  font-family:Arial, sans-serif;
+  color:white;
+}
+
+
+.home-page{
+  height:100vh;
+  width:100%;
+  overflow:hidden;
+}
+
+
+/* VIDEO */
+
+.bg-video{
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:-2;
+
+}
+
+
+/* OVERLAY */
+
+.overlay{
+
+  position:fixed;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.6);
+
+  z-index:-1;
+
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:20px 50px;
+
+}
+
+
+.navbar ul{
+
+  display:flex;
+
+  gap:30px;
+
+  list-style:none;
+
+}
+
+
+.navbar li{
+
+ cursor:pointer;
+
+}
+
+
+/* HERO */
+
+.hero-content{
+
+ position:absolute;
+
+ top:50%;
+
+ left:50%;
+
+ transform:translate(-50%,-50%);
+
+ text-align:center;
+
+}
+
+
+.hero-content h1{
+
+ font-size:70px;
+
+}
+
+
+.hero-content h2{
+
+ margin:20px;
+
+}
+
+
+.hero-content button{
+
+ padding:15px 30px;
+
+ border:none;
+
+ border-radius:25px;
+
+ background:#ff4081;
+
+ color:white;
+
+ cursor:pointer;
+
+}
+.info-page {
+
+min-height:100vh;
+
+padding:100px 80px;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.7)
+),
+url("https://images.unsplash.com/photo-1511578314322-379afb476865");
+
+background-size:cover;
+
+background-position:center;
+
+color:white;
+
+}
+
+
+.info-page h1{
+
+font-size:45px;
+
+margin-bottom:25px;
+
+}
+
+
+.info-page h2{
+
+margin-top:25px;
+
+color:#ff4081;
+
+}
+
+
+.info-page p{
+
+font-size:18px;
+
+line-height:1.7;
+
+}
+
+
+.info-page ul{
+
+margin-top:15px;
+
+font-size:18px;
+
+line-height:2;
+
+}
+/* ================= ADMIN DASHBOARD ================= */
+
+
+.admin-dashboard{
+
+display:flex;
+
+min-height:100vh;
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+/* SIDEBAR */
+
+
+.sidebar{
+
+width:250px;
+
+background:#1a1a1a;
+
+padding:30px;
+
+}
+
+
+.sidebar h2{
+
+color:#ff4081;
+
+font-size:35px;
+
+margin-bottom:40px;
+
+}
+
+
+.sidebar ul{
+
+list-style:none;
+
+}
+
+
+.sidebar li{
+
+padding:15px 0;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+
+
+.sidebar li:hover{
+
+color:#ff4081;
+
+}
+
+
+
+
+
+/* CONTENT */
+
+
+.dashboard-content{
+
+flex:1;
+
+padding:40px;
+
+}
+
+
+
+.dashboard-content h1{
+
+font-size:40px;
+
+}
+
+
+
+
+/* STAT CARDS */
+
+
+.stats{
+
+display:flex;
+
+gap:25px;
+
+margin:30px 0;
+
+}
+
+
+.stat-card{
+
+background:#222;
+
+padding:25px;
+
+border-radius:15px;
+
+width:220px;
+
+text-align:center;
+
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+
+}
+
+
+.stat-card h2{
+
+font-size:40px;
+
+color:#ff4081;
+
+}
+
+
+
+
+/* FORM */
+
+
+.event-form{
+
+background:#1c1c1c;
+
+padding:30px;
+
+border-radius:15px;
+
+}
+
+
+
+.event-form input{
+
+display:block;
+
+width:100%;
+
+padding:14px;
+
+margin:12px 0;
+
+border-radius:8px;
+
+border:none;
+
+}
+
+
+
+
+
+.event-form button{
+
+background:#ff4081;
+
+}
+
+
+
+
+
+/* EVENTS */
+
+
+.event-title{
+
+margin:40px 0 20px;
+
+}
+
+
+
+.event-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+
+
+
+.admin-card{
+
+background:#222;
+
+border-radius:15px;
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+
+
+.admin-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 15px 30px black;
+
+}
+
+
+
+.admin-card img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+}
+
+
+
+.admin-card div{
+
+padding:20px;
+
+}
+
+
+
+.admin-card button{
+
+margin-top:10px;
+
+}
+
+
+
+
+@media(max-width:800px){
+
+.admin-dashboard{
+
+flex-direction:column;
+
+}
+
+
+.sidebar{
+
+width:100%;
+
+}
+
+
+.stats{
+
+flex-direction:column;
+
+}
+
+}
+/* ================= LOGIN PAGE ================= */
+
+
+.login-page{
+
+min-height:100vh;
+
+width:100%;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,0.6),
+rgba(0,0,0,0.6)
+),
+
+url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.login-container{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.login-box{
+
+
+width:350px;
+
+padding:35px;
+
+
+background:rgba(0,0,0,0.75);
+
+
+border-radius:15px;
+
+
+text-align:center;
+
+
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+
+
+backdrop-filter:blur(10px);
+
+
+animation:zoomIn 0.8s ease;
+
+
+}
+
+
+
+.login-box h2{
+
+
+font-size:35px;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.login-box input{
+
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+
+border:none;
+
+outline:none;
+
+border-radius:8px;
+
+
+font-size:16px;
+
+
+}
+
+
+
+.login-box button{
+
+
+width:100%;
+
+padding:14px;
+
+
+border:none;
+
+border-radius:25px;
+
+
+background:linear-gradient(
+45deg,
+#ff416c,
+#ff4b2b
+);
+
+
+color:white;
+
+
+font-size:18px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+.login-box button:hover{
+
+transform:scale(1.05);
+
+}

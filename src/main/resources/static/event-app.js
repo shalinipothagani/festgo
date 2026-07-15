@@ -32,31 +32,31 @@ let events = [
     }
 ];
 
-function displayEvents(){
+function displayEvents() {
     list.innerHTML = "";
 
     events.forEach(e => {
         list.innerHTML += `
-        <div class="card">
-            <img src="${e.img}" alt="${e.name}">
-            <div class="card-body">
-                <h3>${e.name}</h3>
-                <p>Date: ${e.date}</p>
-                <p>Venue: ${e.venue}</p>
-                <button onclick="registerEvent('${e.name}')">
-                    Register
-                </button>
+            <div class="card">
+                <img src="${e.img}" alt="${e.name}">
+                <div class="card-body">
+                    <h3>${e.name}</h3>
+                    <p>Date: ${e.date}</p>
+                    <p>Venue: ${e.venue}</p>
+                    <button onclick="registerEvent('${e.name}')">
+                        Register
+                    </button>
+                </div>
             </div>
-        </div>`;
+        `;
     });
 }
 
-function registerEvent(name){
+function registerEvent(name) {
     alert("Registered for " + name);
 }
 
-
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     const event = {
@@ -68,10 +68,9 @@ form.addEventListener("submit", function(e){
     };
 
     events.push(event);
-
     displayEvents();
-
     form.reset();
 });
 
+// INITIAL LOAD
 displayEvents();

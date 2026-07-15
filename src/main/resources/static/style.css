@@ -1,216 +1,129 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: Arial, sans-serif; color: white; min-height: 100vh; } /* VIDEO BACKGROUND */ .bg-video { position: fixed; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: -2; } /* DARK OVERLAY */ .overlay { position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: -1; } /* HOME TEXT */ .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 1; } /* ================= LOGIN PAGE ================= */ .login-page { min-height: 100vh; width: 100%; background: url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30") no-repeat center center/cover; } .login-container { min-height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; z-index: 1; } .login-box { background: rgba(0,0,0,0.75); padding: 25px; width: 320px; border-radius: 12px; text-align: center; } .login-box h2 { margin-bottom: 15px; } /* ================= DASHBOARD ================= */ .dashboard-page { min-height: 100vh; width: 100%; background: url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b") no-repeat center center/cover; } header { position: relative; z-index: 1; text-align: center; padding: 20px; font-size: 28px; font-weight: bold; } /* ================= FORM ================= */ form { position: relative; z-index: 1; background: rgba(0,0,0,0.75); padding: 20px; width: 320px; margin: 20px auto; border-radius: 12px; } input, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 6px; border: none; } button { background: #ff4081; color: white; font-weight: bold; cursor: pointer; } button:hover { background: #e91e63; } /* ================= EVENTS ================= */ .event-list { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; padding: 25px; } .card { background: rgba(0,0,0,0.8); border-radius: 12px; overflow: hidden; transition: 0.3s; } .card:hover { transform: translateY(-5px); } .card img { width: 100%; height: 160px; object-fit: cover; } .card-body { padding: 15px; } .card-body h3 { margin-bottom: 10px; } .card-body p { margin: 5px 0; } /* MOBILE RESPONSIVE */ @media(max-width:600px){ .login-box, form{ width:90%; } }
+/* ================= PRO ANIMATIONS ================= */
 
+/* PAGE FADE */
 body {
-    font-family: Arial, sans-serif;
-    color: white;
-    min-height: 100vh;
+    animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 
-/* VIDEO BACKGROUND */
-.bg-video {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    z-index: -2;
-}
-
-
-/* DARK OVERLAY */
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: -1;
-}
-
-
-/* HOME TEXT */
+/* HERO TEXT FLOAT */
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
+    animation: floatUp 1.5s ease-out;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translate(-50%, 60%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
 }
 
 
-/* ================= LOGIN PAGE ================= */
-
-.login-page {
-    min-height: 100vh;
-    width: 100%;
-    background: url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30")
-    no-repeat center center/cover;
-}
-
-
-.login-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-
-.login-box {
-    background: rgba(0,0,0,0.75);
-    padding: 25px;
-    width: 320px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-
-.login-box h2 {
-    margin-bottom: 15px;
-}
-
-
-/* ================= DASHBOARD ================= */
-
-.dashboard-page {
-    min-height: 100vh;
-    width: 100%;
-    background: url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b")
-    no-repeat center center/cover;
-}
-
-header {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 20px;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-
-/* ================= FORM ================= */
-
-form {
-    position: relative;
-    z-index: 1;
-
-    background: rgba(0,0,0,0.75);
-    padding: 20px;
-    width: 320px;
-    margin: 20px auto;
-
-    border-radius: 12px;
-}
-
-
-input,
+/* GLOWING BUTTON */
 button {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-
-    border-radius: 6px;
+    padding: 10px 20px;
     border: none;
-}
-
-
-button {
-    background: #ff4081;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: white;
-    font-weight: bold;
+    border-radius: 25px;
     cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(255,75,43,0.5);
 }
-
 
 button:hover {
-    background: #e91e63;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255,75,43,0.9);
 }
 
 
-/* ================= EVENTS ================= */
+/* LOGIN BOX GLASS EFFECT */
+.login-box {
+    animation: zoomIn 1s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
 
-.event-list {
-
-    position: relative;
-    z-index: 1;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-
-    gap: 20px;
-    padding: 25px;
+@keyframes zoomIn {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 
-.card {
-
-    background: rgba(0,0,0,0.8);
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
+/* INPUT FIELD EFFECT */
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    outline: none;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
-
-.card:hover {
-
-    transform: translateY(-5px);
-
+.login-box input:focus {
+    box-shadow: 0 0 10px #ff4b2b;
 }
 
 
-.card img {
-
-    width: 100%;
-
-    height: 160px;
-
-    object-fit: cover;
-
+/* EVENT CARDS ADVANCED ANIMATION */
+.event-card {
+    animation: cardEntry 0.8s ease;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-
-.card-body {
-
-    padding: 15px;
-
-}
-
-
-.card-body h3 {
-
-    margin-bottom: 10px;
-
-}
-
-
-.card-body p {
-
-    margin: 5px 0;
-
-}
-
-
-/* MOBILE RESPONSIVE */
-
-@media(max-width:600px){
-
-    .login-box,
-    form{
-
-        width:90%;
-
+@keyframes cardEntry {
+    from {
+        transform: translateY(50px) scale(0.9);
+        opacity: 0;
     }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
 
+
+/* CARD HOVER 3D EFFECT */
+.event-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+
+/* IMAGE ZOOM EFFECT */
+.event-card img {
+    transition: 0.5s;
+}
+
+.event-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* TEXT GLOW EFFECT */
+h1 {
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 25px #ff4b2b; }
 }
