@@ -1,41 +1,52 @@
 package com.festgo.festgo.controller;
 
+
 import com.festgo.festgo.model.Registration;
 import com.festgo.festgo.service.RegistrationService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/registrations")
+@CrossOrigin(origins = "http://localhost:5174")
 public class RegistrationController {
+
 
     @Autowired
     private RegistrationService service;
 
-    // 🎟️ Create booking
+
+
+    // Create registration
     @PostMapping
-    public Registration register(@RequestBody Registration registration) {
+    public Registration register(
+            @RequestBody Registration registration){
+
         return service.registerEvent(registration);
     }
 
-    // 📋 Get all bookings
+
+
+    // View all registrations
     @GetMapping
-    public List<Registration> getAll() {
+    public List<Registration> getAll(){
+
         return service.getAllRegistrations();
     }
 
-    // 🔍 Filter by user
-    @GetMapping("/user/{userId}")
-    public List<Registration> getByUser(@PathVariable Integer userId) {
-        return service.getByUser(userId);
-    }
 
-    // ❌ Delete booking
+
+    // Delete registration
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable Integer id) {
+    public String delete(
+            @PathVariable int id){
+
         service.deleteRegistration(id);
+
         return "Deleted successfully";
     }
 }

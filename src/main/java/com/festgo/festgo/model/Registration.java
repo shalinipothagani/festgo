@@ -3,37 +3,89 @@ package com.festgo.festgo.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="registration")
 public class Registration {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int userId;
-    private int eventId;
 
-    // Getters & Setters
+    private String name;
+
+    private String email;
+
+    private String phoneNumber;
+
+    private String eventName;
+
+    private String branch;
+
+
+
     public int getId() {
         return id;
     }
 
+
     public void setId(int id) {
-        this.id = id;
+        this.id=id;
     }
 
-    public int getUserId() {
-        return userId;
+
+
+    public String getName(){
+        return name;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+
+    public void setName(String name){
+        this.name=name;
     }
 
-    public int getEventId() {
-        return eventId;
+
+
+    public String getEmail(){
+        return email;
     }
 
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
+
+    public void setEmail(String email){
+        this.email=email;
     }
+
+
+
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber=phoneNumber;
+    }
+
+
+
+    public String getEventName(){
+        return eventName;
+    }
+
+
+    public void setEventName(String eventName){
+        this.eventName=eventName;
+    }
+
+
+
+    public String getBranch(){
+        return branch;
+    }
+
+
+    public void setBranch(String branch){
+        this.branch=branch;
+    }
+
 }

@@ -7,29 +7,32 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class RegistrationService {
+
 
     @Autowired
     private RegistrationRepository repository;
 
-    // 🎟️ Create booking
-    public Registration registerEvent(Registration registration) {
+
+    // Save registration
+    public Registration registerEvent(Registration registration){
+
         return repository.save(registration);
     }
 
-    // 📋 Get all bookings
-    public List<Registration> getAllRegistrations() {
+
+    // Get all registrations
+    public List<Registration> getAllRegistrations(){
+
         return repository.findAll();
     }
 
-    // 🔍 Filter by user
-    public List<Registration> getByUser(Integer userId) {
-        return repository.findByUserId(userId);
-    }
 
-    // ❌ Delete booking
-    public void deleteRegistration(Integer id) {
+    // Delete registration
+    public void deleteRegistration(int id){
+
         repository.deleteById(id);
     }
 }
