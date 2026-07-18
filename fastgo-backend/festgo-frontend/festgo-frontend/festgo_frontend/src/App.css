@@ -83,6 +83,15 @@ body{
  cursor:pointer;
 
 }
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.navbar a:hover {
+  color: #ffcc00;
+}
 
 
 /* HERO */
@@ -618,5 +627,43 @@ cursor:pointer;
 .login-box button:hover{
 
 transform:scale(1.05);
+
+}
+.logout-message{
+
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  background: #28a745;
+
+  color:white;
+
+  padding:15px 25px;
+
+  border-radius:10px;
+
+  font-size:16px;
+
+  z-index:9999;
+
+  animation: slide 0.5s ease;
+
+}
+
+
+@keyframes slide{
+
+  from{
+    transform:translateX(100px);
+    opacity:0;
+  }
+
+  to{
+    transform:translateX(0);
+    opacity:1;
+  }
 
 }

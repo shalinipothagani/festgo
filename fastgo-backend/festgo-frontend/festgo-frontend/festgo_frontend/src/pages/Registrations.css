@@ -1,0 +1,51 @@
+.registration-page {
+
+    min-height: 100vh;
+    background: black;
+    color: white;
+    padding: 40px;
+
+}
+
+
+.registration-page h1 {
+
+    text-align: center;
+    color: cyan;
+    margin-bottom: 30px;
+
+}
+
+
+table {
+
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    background: #111;
+
+}
+
+
+th, td {
+
+    padding: 15px;
+    border: 1px solid #555;
+    text-align: center;
+
+}
+
+
+th {
+
+    background: #222;
+    color: cyan;
+
+}
+
+
+tr:hover {
+
+    background: #333;
+
+}
